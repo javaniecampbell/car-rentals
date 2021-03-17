@@ -9,9 +9,10 @@ namespace shopping_cart.Services
     {
         private readonly ICartsRepository _cartsRepository;
         private readonly CustomerCart _customerCart;
-        public CartsService(ICartsRepository cartsRepository)
+        public CartsService(ICartsRepository cartsRepository, CustomerCart customerCart)
         {
             _cartsRepository = cartsRepository;
+            _customerCart = customerCart;
         }
 
         public List<CartDto> GetAllCarts()

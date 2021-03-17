@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using shopping_cart.DomainObjects;
 using shopping_cart.Repositories;
 using shopping_cart.Services;
 using System;
@@ -21,6 +22,12 @@ namespace shopping_cart
         public static IServiceCollection AddAppServices(this IServiceCollection services)
         {
             services.AddTransient<ICartsService, CartsService>();
+            return services;
+        }
+
+        public static IServiceCollection AddDomainEntities(this IServiceCollection services)
+        {
+            services.AddTransient<CustomerCart>();
             return services;
         }
     }

@@ -77,6 +77,10 @@ namespace shopping_cart.DomainObjects
 
         public CartDto FromEntity(Cart entity)
         {
+            // DO the simplest thing first then refactor
+            if (entity == null)
+                return new CartDto();
+
             _cart.CartId = entity.Id;
             _cart.TotalItemsCost = entity.TotalCost;
             _cart.UserId = entity.UserId;

@@ -38,6 +38,7 @@ namespace shopping_cart
             // K.I.S.S - Keep It Simple Stupid
             services.AddRepositories();
             services.AddAppServices();
+            services.AddDomainEntities();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
